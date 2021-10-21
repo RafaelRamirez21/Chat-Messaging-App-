@@ -1,12 +1,12 @@
 @import './global.scss';
 
-.login{
+.signup{
   height: 100vh;
   width: 100vw;
   position:relative;
   top: 0;
   overflow-x: hidden;
-  
+
   .containerTop{
     width: 425px;
     height: 203px;
@@ -23,16 +23,13 @@
       width: 320px;
     }
     .top{
-      
-      
       width: inherit;
       height: inherit;
-      background-image: url('https://i.ibb.co/stnC1Zt/LoginTop.png');
+      background-image: url('https://i.ibb.co/7YF1m3j/Sign-Up-Top.png');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
-
   }
 
   .textContainer{
@@ -67,28 +64,10 @@
     }
   }
 
-  .profileContainer{
-    position: absolute;
-    top: 296px;
-    left: calc( (100% - 84px) / 2 );
-    width: 84px;
-    height: 84px;
-    border-radius: 50%; 
-    background-color: #92D6F1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .profile{
-      font-size:65px;
-    }
-    
-  }
-
   .form{
     position: absolute;
     left: calc( (100% - 220px) / 2 );
-    top: 420px;
+    top: 286px;
     display: flex;
     flex-direction: column;
 
@@ -109,14 +88,14 @@
   .button{
     position: absolute;
     left: calc( (100% - 220px) / 2 );
-    top: 585px;
+    top: 711px;
     width: 220px;
     height: 56px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #38B88F;
+    background-color: #5747A6;
     font-size:18px;
     color: #fff;
     font-family: 'Titillium Web', sans-serif;
@@ -127,7 +106,7 @@
     height: 203px;
     object-fit: contain;
     position: absolute;
-    top: 590px;
+    top: 720px;
     left: 0;
 
     @include mobileM{
@@ -141,13 +120,11 @@
       
       width: inherit;
       height: inherit;
-      background-image: url('https://i.ibb.co/VM0t9Z0/Login-Bottom.png');
+      background-image: url('https://i.ibb.co/nczt8QS/Sign-Up-Bottom.png');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
 
   }
-  
 }
-

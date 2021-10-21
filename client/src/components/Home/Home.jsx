@@ -17,9 +17,9 @@ const Home = () => {
           <Link className='link' to="/login">
             <div className="login button">Login</div>
           </Link>
-          
-          <div className="signUp button">Sign Up</div>
-          
+          <Link className='link' to="/signup">
+            <div className="signUp button">Sign Up</div>
+          </Link>
         </div>
       </div>
       
