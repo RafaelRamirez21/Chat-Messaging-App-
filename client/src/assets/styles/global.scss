@@ -3,6 +3,18 @@
 $base-color: #fff;
 $color: rgba(black, 0.88);
 
+@mixin mobileM {
+  @media (max-width: 375px) {
+    @content
+  }
+};
+
+@mixin mobileS {
+  @media (max-width: 320px) {
+    @content
+  }
+}
+
 body {
   background-color: $base-color;
   color: $color;
