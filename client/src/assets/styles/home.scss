@@ -1,0 +1,187 @@
+@import './global.scss';
+
+.animationArea{
+  background-color: transparent ;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .staticContainer{
+    z-index: 1;
+
+    .textContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      // background-color: #fff;
+      h1{
+        text-align: center;
+        font-size:40px;
+        margin: 0;
+        background-color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+      }
+
+      p{
+        text-align: center;
+        background-color: #fff;
+        width: fit-content;
+        font-family: 'Titillium Web', sans-serif;
+      }
+    }
+
+    .logo{
+      // position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url(../../assets/images/icono\ principal.png);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      
+    }
+
+    .buttonsConatiner{
+
+      z-index: 1;
+      
+      .link{
+        text-decoration: none;
+      }
+
+      .button{
+        width: 200px; 
+        height: 56px;
+        border-radius: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size:18px;
+        cursor: pointer;
+      }
+
+      .login{
+        margin-top: 35px;
+        background-color: #38B88F;
+        color: #fff;
+        cursor: pointer;
+        font-family: 'Titillium Web', sans-serif;
+      }
+
+      .signUp{
+        margin-top: 16px;
+        background-color: #fff;
+        border: 2px solid #38B88F;
+        color: #677282;
+        font-family: 'Titillium Web', sans-serif;
+      }
+    }
+  }
+  
+
+  .boxArea{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    
+
+    li{
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 25px;
+      height: 25px;
+      // background: rgba(255, 255, 255, 0.2);
+      animation: animate 20s linear infinite;
+      bottom: -150px;
+    }
+
+    li:nth-child(1) {
+      left: 75%;
+      animation-delay: 0s;
+
+      width: 85px; 
+      height: 85px; 
+      background-image: url(../../assets/images/Path\ 2.png);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+    }
+    li:nth-child(2) {
+      left: 12%;
+      animation-delay: 2.5s;
+      animation-duration: 15s;
+
+
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 5px solid #5747A6;
+    }
+    li:nth-child(3) {
+      left: 65%;
+      animation-delay: 5.5s;
+      width: 80px;
+      height: 80px;
+      background-image: url(../../assets/images/Star\ 1.png);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    li:nth-child(4) {
+      left: 37%;
+      // width: 150px;
+      // height: 150px;
+      animation-delay: 0s;
+      animation-duration: 15s;
+
+      width: 50px; 
+      height: 50px; 
+      border: 5px solid #38B88F; 
+    }
+    li:nth-child(5) {
+      left: 53%;
+      width: 40px;
+      height: 40px;
+      animation-delay: 0s;
+      background-image: url(../../assets/images/Triangle.png);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    li:nth-child(6) {
+      left: 5%;
+      animation-delay: 3.5s;
+      width: 60px;
+      height: 60px;
+      background-image: url(../../assets/images/Triangle\ \(1\).png);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        // opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) rotate(360deg);
+        // opacity: 1;
+      }
+    }
+    
+  }
+}

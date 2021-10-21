@@ -1,7 +1,11 @@
-$base-color: #c6538c;
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+$base-color: #fff;
 $color: rgba(black, 0.88);
 
 body {
   background-color: $base-color;
   color: $color;
+  margin: 0;
+  box-sizing: border-box;
 }
