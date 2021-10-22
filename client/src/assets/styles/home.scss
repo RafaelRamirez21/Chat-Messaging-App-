@@ -61,7 +61,7 @@
       z-index: 1;
       backface-visibility: hidden;
       transform: translateZ(0) scale(1.0, 1.0);
-      background-image: url('https://i.ibb.co/Rv9mk4f/imagen-Laptop.png');
+      background-image: url('https://i.ibb.co/CJrLs2c/image-3-1.png');
       background-size: cover;
       //background-attachment: fixed;
       animation: increase 40s linear 10ms infinite;
@@ -206,7 +206,7 @@
 
   @include laptopL{
     display:none;
-  }
+  };
 
   @include mobileL{
     background-color: transparent ;
