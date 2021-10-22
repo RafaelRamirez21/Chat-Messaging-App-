@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|gif|jpg)$/,
+        test: /\.(png|gif|svg|jpg)$/,
         use: [
           {
             loader: 'file-loader',
@@ -59,6 +59,6 @@ module.exports = {
     static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3006,
-    historyApiFallback:true,
+    historyApiFallback: true,
   }
 }
