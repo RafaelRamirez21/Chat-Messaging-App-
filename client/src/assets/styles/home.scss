@@ -1,7 +1,215 @@
 @import './global.scss';
 
+
+.laptop{
+  height:100vh;
+  width:100%;
+  display: flex;
+
+  .left{
+    display: flex;
+    flex: 8;
+    height:728px;
+    
+
+    @include laptopL {
+      height: 855px;
+    };
+
+    @include laptop{
+      height: 728px;
+    };
+    
+    .banner{
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      //background-position: cover;
+
+      .banner-text{
+        height: fit-content;
+        width: fit-content;
+
+        h1{
+          font-size: 55px;
+          font-family: 'Titillium Web', sans-serif;
+          text-align: center;
+        }
+      }
+    }
+
+    .banner:after{
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+    }
+
+    .banner::before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      backface-visibility: hidden;
+      transform: translateZ(0) scale(1.0, 1.0);
+      background-image: url('https://i.ibb.co/Rv9mk4f/imagen-Laptop.png');
+      background-size: cover;
+      //background-attachment: fixed;
+      animation: increase 40s linear 10ms infinite;
+      transition: all 0.2s ease-in-out;
+      z-index: -2;
+    }
+
+    @keyframes increase {
+      0%{
+        transform: scale(1)
+      }
+      100%{
+        transform: scale(1.5)
+      }
+      
+    }
+
+      
+    
+  }
+
+  .right{
+    display: flex;
+    flex: 5;
+    background-color: #fff;
+    // width: 100%;
+    // height: 100%;
+    position: relative;
+
+
+    .textContLap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 40px;
+      right: calc((100% - 220px) / 2);
+
+      h1{
+        text-align: center;
+        font-size:50px;
+        margin: 0;
+        background-color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+      }
+
+      p{
+        margin-top:0px;
+        font-size:20px;
+        text-align: center;
+        background-color: #fff;
+        width: fit-content;
+        font-family: 'Titillium Web', sans-serif;
+      }
+    }
+
+    .profileContainer{
+      position: absolute;
+      top: 215px;
+      left: calc( (100% - 84px) / 2 );
+      width: 84px;
+      height: 84px;
+      border-radius: 50%; 
+      background-color: rgba(56, 184, 143, 0.73);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .profile{
+        font-size:65px;
+      }
+      
+    }
+
+    .form{
+      position: absolute;
+      left: calc( (100% - 220px) / 2 );
+      top: 345px;
+      display: flex;
+      flex-direction: column;
+  
+      input{
+        height: 50px;
+        width: 220px;
+        border: none;
+        border-bottom: 1px solid #000;
+        margin-bottom: 25px;
+        font-size: 20px;
+      }
+      
+      input:focus {
+        outline: none;
+      }
+    }
+
+    .buttonsConatLap{
+      position: absolute;
+      top: 536px;
+      left: calc( (100% - 220px) / 2 );
+
+      .linkLap{
+        text-decoration: none;
+  
+        .buttonlap{
+          width: 200px; 
+          height: 56px;
+          border-radius: 15px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size:18px;
+          cursor: pointer;
+        }
+
+        .loginLap{
+          background-color: #38B88F;
+          color: #fff;
+          cursor: pointer;
+          font-family: 'Titillium Web', sans-serif;
+        }
+
+        .signUpLap{
+          margin-top: 16px;
+          background-color: #fff;
+          border: 2px solid #38B88F;
+          color: #677282;
+          font-family: 'Titillium Web', sans-serif;
+        }
+      }
+    }
+    
+  }
+
+  @include mobileL{
+    display:none;
+  }
+}
 .animationArea{
-  background-color: transparent ;
+
+
+  @include laptopL{
+    display:none;
+  }
+
+  @include mobileL{
+    background-color: transparent ;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -9,7 +217,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  }
+  
 
+  
 
   .staticContainer{
     z-index: 1;
