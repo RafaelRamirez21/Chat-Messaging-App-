@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/styles/signup.scss';
+import Cookies from 'universal-cookie';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import { UserOutlined } from '@ant-design/icons';
 
+const initialState = {
+  name: '',
+  lastName: '',
+  email: '',
+  post: '',
+  username: '',
+  password: '',
+  repeatPassword: '',
+}
+
 const SignUp = () => {
+
+  const [form, setForm] = useState(initialState)
+
+  const handleChange = (e) => {
+    setForm({...form, [e.target.name]: e.target.value})
+
+    // console.log(form);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(form);
+  }
+
   return (
     <>
       <div className="sigpUpLap">
@@ -22,25 +49,62 @@ const SignUp = () => {
           <div className="profileContainer">
             <UserOutlined className='profile' />
           </div>
-          <form className="form">
-            <input type="text" placeholder="Name"></input>
-            <input type="text" placeholder="Last Name"></input>
-            <input type="email" placeholder="Email"></input>
-            <input type="text" placeholder="Post"></input>
-            <input type="text" placeholder="Username"></input>
-            <input type="password" placeholder="Password"></input>
-            <input type="password" placeholder="Repeat Password"></input>
+          <form className="form" onSubmit={handleSubmit}>
+            <input 
+              type="text" 
+              placeholder="Name" 
+              name='name' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="text" 
+              placeholder="Last Name"
+              name='lastName' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="email" 
+              placeholder="Email"
+              name='email' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="text" 
+              placeholder="Post"
+              name='post' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="text" 
+              placeholder="Username"
+              name='username' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="password" 
+              placeholder="Password"
+              name='password' 
+              onChange={handleChange} 
+              required/>
+            <input 
+              type="password" 
+              placeholder="Repeat Password"
+              name='repeatPassword' 
+              onChange={handleChange} 
+              required/>
+
+            <div className="buttonsConatLap">
+              <button className="loginLap buttonlap">Sign Up</button>
+              <Link className='linkLap' to="/">
+                <div className="signUpLap buttonlap">Login</div>
+              </Link>
+            </div>
           </form>
-          <div className="buttonsConatLap">
-            <Link className='linkLap' to="#">
-              <div className="loginLap buttonlap">Sign Up</div>
-            </Link>
-            <Link className='linkLap' to="/">
-              <div className="signUpLap buttonlap">Login</div>
-            </Link>
-          </div>
+          
         </div>
       </div>
+
+      {/* mobile */}
       <div className="signup">
         <div className="containerTop">
           <div className="top"></div>
@@ -50,18 +114,53 @@ const SignUp = () => {
           <p>Communication</p>
           <p>Sign Up</p>
         </div>
-        <form className="form">
-          <input type="text" placeholder="Name"></input>
-          <input type="text" placeholder="Last Name"></input>
-          <input type="email" placeholder="Email"></input>
-          <input type="text" placeholder="Post"></input>
-          <input type="text" placeholder="Username"></input>
-          <input type="password" placeholder="Password"></input>
-          <input type="password" placeholder="Repeat Password"></input>
+        <form className="form" onSubmit={handleSubmit}>
+          <input 
+            type="text" 
+            placeholder="Name" 
+            name='name' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="text" 
+            placeholder="Last Name"
+            name='lastName' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="email" 
+            placeholder="Email"
+            name='email' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="text" 
+            placeholder="Post"
+            name='post' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="text" 
+            placeholder="Username"
+            name='username' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="password" 
+            placeholder="Password"
+            name='password' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="password" 
+            placeholder="Repeat Password"
+            name='repeatPassword' 
+            onChange={handleChange} 
+            required/>
+            <button className='button'>Sign Up</button>
         </form>
-        <Link className='linkLap' to="/login">
-          <div className='button'>Sign Up</div>
-        </Link>
+
+          
         <div className="containerBottom">
           <div className="bottom"></div>
         </div>

@@ -11,21 +11,37 @@ import {
 import ViewMain from '../components/ViewChats/ViewMain';
 
 
+const authToken = false;
+
 
 const App = () => {
 
-  return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/chat" component={ViewMain} />
-        </Switch>
-      </Router>
-    </>
-  )
+  if(!authToken) {
+    return(
+      <>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </Router>
+      </>
+    )
+  }
+  else{
+    return (
+      <>
+        <Router>
+          <Switch>
+            <Route exact path="/chat" component={ViewMain} />
+          </Switch>
+        </Router>
+      </>
+    )
+  }
+
+  
 }
 
 export default App;
