@@ -1,8 +1,183 @@
-.top{
+@import './global.scss';
+
+.login{
+  height: 100vh;
   width: 100vw;
-  height: 100px;
-  background-image: url(../images/LoginTop.png);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
+  position:relative;
+  top: 0;
+  overflow-x: hidden;
+  
+  .containerTop{
+    width: 425px;
+    height: 203px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include mobileM{
+      width: 375px;
+    }
+
+    @include mobileS{
+      width: 320px;
+    }
+    .top{
+      
+      
+      width: inherit;
+      height: inherit;
+      background-image: url('https://i.ibb.co/stnC1Zt/LoginTop.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+  }
+
+  .textContainer{
+    position: absolute;
+    top: 84px;
+    left: calc( (100% - 176px) / 2 );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      text-align: center;
+      font-size:40px;
+      margin: 0;
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    p{
+      text-align: center;
+      width: fit-content;
+      font-family: 'Titillium Web', sans-serif;
+      margin: 0;
+      margin-top:16px;
+    }
+
+    p:nth-child(3){
+      font-size: 40px;
+      margin: 0;
+      margin-top: 20px;
+      font-family: 'Titillium Web', sans-serif;
+    }
+  }
+
+  .profileContainer{
+    position: absolute;
+    top: 296px;
+    left: calc( (100% - 84px) / 2 );
+    width: 84px;
+    height: 84px;
+    border-radius: 50%; 
+    background-color: #92D6F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile{
+      font-size:65px;
+    }
+    
+  }
+
+  .form{
+    position: absolute;
+    left: calc( (100% - 220px) / 2 );
+    top: 420px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    input{
+      height: 50px;
+      width: 220px;
+      border: none;
+      border-bottom: 1px solid #000;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    
+    input:focus {
+      outline: none;
+    }
+
+    .buttonsContainer{
+      .button{
+        // position: absolute;
+        // left: calc( (100% - 220px) / 2 );
+        // top: 175px;
+        width: 220px;
+        height: 56px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #38B88F;
+        font-size:18px;
+        color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+        border: none;
+        outline: none;
+      }
+  
+      .link{
+        text-decoration: none;
+  
+        .signUp{
+          margin-top:15px;
+          width: 220px;
+          height: 56px;
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid #38B88F;
+          font-size:18px;
+          color: #677282;
+          font-family: 'Titillium Web', sans-serif;
+          outline: none;
+          background-color: #fff;
+        }
+      }
+    }
+
+    
+  }
+
+  
+
+  .containerBottom{
+    width: 425px;
+    height: 203px;
+    object-fit: contain;
+    position: absolute;
+    top: 693px;
+    left: 0;
+    z-index: 0;
+
+    @include mobileM{
+      width: 375px;
+    }
+
+    @include mobileS{
+      width: 320px;
+    }
+    .bottom{
+      
+      width: inherit;
+      height: inherit;
+      background-image: url('https://i.ibb.co/VM0t9Z0/Login-Bottom.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+  }
+  
 }
+
