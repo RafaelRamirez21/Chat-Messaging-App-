@@ -170,6 +170,9 @@ const SignUp = () => {
             required/>
             
             <button className='button'>Sign Up</button>
+            <Link className='link' to="/login">
+              <div className="login">Login</div>
+            </Link>
   
         </form>
 

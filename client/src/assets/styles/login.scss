@@ -106,23 +106,47 @@
       outline: none;
     }
 
-    .button{
-      // position: absolute;
-      // left: calc( (100% - 220px) / 2 );
-      // top: 175px;
-      width: 220px;
-      height: 56px;
-      border-radius: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #38B88F;
-      font-size:18px;
-      color: #fff;
-      font-family: 'Titillium Web', sans-serif;
-      border: none;
-      outline: none;
+    .buttonsContainer{
+      .button{
+        // position: absolute;
+        // left: calc( (100% - 220px) / 2 );
+        // top: 175px;
+        width: 220px;
+        height: 56px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #38B88F;
+        font-size:18px;
+        color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+        border: none;
+        outline: none;
+      }
+  
+      .link{
+        text-decoration: none;
+  
+        .signUp{
+          margin-top:15px;
+          width: 220px;
+          height: 56px;
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid #38B88F;
+          font-size:18px;
+          color: #677282;
+          font-family: 'Titillium Web', sans-serif;
+          outline: none;
+          background-color: #fff;
+        }
+      }
     }
+
+    
   }
 
   

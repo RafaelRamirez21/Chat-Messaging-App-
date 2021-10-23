@@ -309,9 +309,9 @@
     }
 
     .button{
-      position: absolute;
-      left: calc( (100% - 220px) / 2 );
-      top: 555px;
+      // position: absolute;
+      // left: calc( (100% - 220px) / 2 );
+      // top: 555px;
       width: 220px;
       height: 56px;
       border-radius: 15px;
@@ -324,6 +324,26 @@
       font-family: 'Titillium Web', sans-serif;
       outline: none;
       border: none;
+    }
+
+    .link{
+      text-decoration: none;
+
+      .login{
+        margin-top:15px;
+        width: 220px;
+        height: 56px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #5747A6;
+        font-size:18px;
+        color: #677282;
+        font-family: 'Titillium Web', sans-serif;
+        outline: none;
+        background-color: #fff;
+      }
     }
   }
 

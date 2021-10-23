@@ -4,6 +4,7 @@ import { UserOutlined } from '@ant-design/icons';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const cookies = new Cookies();
 
@@ -70,8 +71,12 @@ const Login = () => {
           name='password' 
           onChange={handleChange} 
           required/>
-          <div>
+          <div className="buttonsContainer">
             <button className='button'>Login</button>
+
+            <Link className='link' to="/signup">
+              <div className="signUp">Sign Up</div>
+            </Link>
           </div>
       </form>
       
