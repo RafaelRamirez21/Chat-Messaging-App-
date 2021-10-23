@@ -11,9 +11,9 @@ const ViewMain = () => {
     <>
       <div className='main-view-chat'>
         <Chat client={client} theme='team light'>
-          <ChanelListContainer>
+          <ChannelListContainer>
 
-          </ChanelListContainer>
+          </ChannelListContainer>
 
         </Chat>
       </div>
