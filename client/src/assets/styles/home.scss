@@ -13,11 +13,15 @@
     
 
     @include laptopL {
-      height: 855px;
+      height: 900px;
+    };
+
+    @include laptopM {
+      height: 950px;
     };
 
     @include laptop{
-      height: 728px;
+      height: 800px;
     };
     
     .banner{
@@ -87,8 +91,8 @@
     display: flex;
     flex: 5;
     background-color: #fff;
-    // width: 100%;
-    // height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 
 
@@ -143,6 +147,8 @@
       top: 345px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
   
       input{
         height: 50px;
@@ -156,16 +162,8 @@
       input:focus {
         outline: none;
       }
-    }
 
-    .buttonsConatLap{
-      position: absolute;
-      top: 536px;
-      left: calc( (100% - 220px) / 2 );
-
-      .linkLap{
-        text-decoration: none;
-  
+      .buttonsConatLap{
         .buttonlap{
           width: 200px; 
           height: 56px;
@@ -183,17 +181,25 @@
           color: #fff;
           cursor: pointer;
           font-family: 'Titillium Web', sans-serif;
+          border: none;
+          outline: none;
         }
-
-        .signUpLap{
-          margin-top: 16px;
-          background-color: #fff;
-          border: 2px solid #38B88F;
-          color: #677282;
-          font-family: 'Titillium Web', sans-serif;
+  
+        .linkLap{
+          text-decoration: none;
+    
+          .signUpLap{
+            margin-top: 16px;
+            background-color: #fff;
+            border: 2px solid #38B88F;
+            color: #677282;
+            font-family: 'Titillium Web', sans-serif;
+          }
         }
       }
     }
+
+    
     
   }
 
@@ -201,6 +207,8 @@
     display:none;
   }
 }
+
+//mobile
 .animationArea{
 
 

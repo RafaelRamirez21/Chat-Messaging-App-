@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom";
 import '../../assets/styles/signup.scss';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { UserOutlined } from '@ant-design/icons';
+
+const cookies = new Cookies();
 
 const initialState = {
   name: '',
@@ -25,10 +28,29 @@ const SignUp = () => {
     // console.log(form);
   }
 
-  const handleSubmit = (e) => {
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(form);
+    const { name, lastName, email, post, username, password } = form;
+
+    const URL = 'http://localhost:5000/auth'
+
+    const { data: { token, userId, hashedPassword} } = await axios.post(`${URL}/signup`, { name, lastName, email, post, username, password});
+
+    cookies.set('token', token);
+    cookies.set('username', username);
+    cookies.set('name', name);
+    cookies.set('userId', userId);
+    cookies.set('lastName', lastName);
+    cookies.set('email', email);
+    cookies.set('post', post);
+    cookies.set('hashedPassword', hashedPassword);
+
+    history.push("/");
+
+    window.location.reload();
   }
 
   return (
@@ -86,12 +108,7 @@ const SignUp = () => {
               name='password' 
               onChange={handleChange} 
               required/>
-            <input 
-              type="password" 
-              placeholder="Repeat Password"
-              name='repeatPassword' 
-              onChange={handleChange} 
-              required/>
+            
 
             <div className="buttonsConatLap">
               <button className="loginLap buttonlap">Sign Up</button>
@@ -151,13 +168,9 @@ const SignUp = () => {
             name='password' 
             onChange={handleChange} 
             required/>
-          <input 
-            type="password" 
-            placeholder="Repeat Password"
-            name='repeatPassword' 
-            onChange={handleChange} 
-            required/>
+            
             <button className='button'>Sign Up</button>
+  
         </form>
 
           

@@ -9,6 +9,12 @@ $color: rgba(black, 0.88);
   }
 };
 
+@mixin laptopM{
+  @media (max-width: 1280px) {
+    @content
+  }
+};
+
 @mixin laptop{
   @media (max-width: 1024px) {
     @content

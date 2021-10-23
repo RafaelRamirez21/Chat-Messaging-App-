@@ -91,6 +91,7 @@
     top: 420px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 
     input{
       height: 50px;
@@ -104,31 +105,36 @@
     input:focus {
       outline: none;
     }
+
+    .button{
+      // position: absolute;
+      // left: calc( (100% - 220px) / 2 );
+      // top: 175px;
+      width: 220px;
+      height: 56px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #38B88F;
+      font-size:18px;
+      color: #fff;
+      font-family: 'Titillium Web', sans-serif;
+      border: none;
+      outline: none;
+    }
   }
 
-  .button{
-    position: absolute;
-    left: calc( (100% - 220px) / 2 );
-    top: 585px;
-    width: 220px;
-    height: 56px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #38B88F;
-    font-size:18px;
-    color: #fff;
-    font-family: 'Titillium Web', sans-serif;
-  }
+  
 
   .containerBottom{
     width: 425px;
     height: 203px;
     object-fit: contain;
     position: absolute;
-    top: 590px;
+    top: 693px;
     left: 0;
+    z-index: 0;
 
     @include mobileM{
       width: 375px;
