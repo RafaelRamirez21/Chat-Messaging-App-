@@ -1,9 +1,10 @@
 import React from 'react';
-import Home from '../components/Home/Home';
-import Login from '../components/Home/Login';
-import SignUp from '../components/Home/SignUp';
+import Home from '../Home/Home';
+import Login from '../Home/Login';
+import SignUp from '../Home/SignUp';
 import Cookies from 'universal-cookie';
-import { StreamChat } from 'stream-chat'
+import { StreamChat } from 'stream-chat';
+// import 'stream-chat-react/dist/css/index.css';
 // import MainViewChat from '../components/chats/MainViewChat';
 import {
   BrowserRouter as Router,
@@ -15,11 +16,11 @@ import ViewMain from '../ViewChats/ViewMain';
 
 const cookies = new Cookies();
 
-const apiKey = 'qhk2getw4t93';
+const apiKey = 'mw4x9ttkdtcf';
 
 const authToken = cookies.get("token");
 
-const client = StreamChat.getInstance(apiKey)
+export const client = StreamChat.getInstance(apiKey)
 
 if (authToken) {
   client.connectUser({
@@ -49,6 +50,8 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/chat" component={ViewMain} />
+
           </Switch>
         </Router>
       </>

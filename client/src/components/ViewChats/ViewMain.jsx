@@ -1,58 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
-import cookies from 'universal-cookie';
+import Cookies from 'universal-cookie';
 import { ChannelListContainer, ChannelContainer, Auth } from '../../components';
 import '../../assets/styles/ViewTeams.scss'
-const apiKey = 'mw4x9ttkdtcf';
-const client = StreamChat.getInstance(apiKey);
-const authToken = false;
+
+import { client } from '../routes/App';
 
 const ViewMain = () => {
-  if (!authToken) return <Auth />
-  // import { StreamChat } from 'stream-chat';
-  // import { Chat } from 'stream-chat-react';
-  import Cookies from 'universal-cookie';
-  // import { ChannelListContainer, ChannelContainer } from '../../components';
-
-  // const apiKey = 'mw4x9ttkdtcf';
-  // const client = StreamChat.getInstance(apiKey);
-
-  const cookies = new Cookies();
-
-  const ViewMain = () => {
-
-    const logout = () => {
-      cookies.remove("token");
-      cookies.remove('userId');
-      cookies.remove('post');
-      cookies.remove('username');
-      cookies.remove('name');
-      cookies.remove('lastName');
-      cookies.remove('email');
-      cookies.remove('hashedPassword');
-
-      window.location.reload();
-    }
-
-    return (
-      <>
-        {/* <div className='main-view-chat'>
+  const [createType, setCreateType] = useState('');
+  const [isCreating, setIsCreating] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  return (
+    <>
+      <div className='main-view-chat'>
         <Chat client={client} theme='team light'>
-          <ChannelListContainer />
-          <ChannelContainer />
+          <ChannelListContainer
+            isCreating={isCreating}
+            setIsCreating={setIsCreating}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
+            setCreateType={setCreateType}
+
+          />
+          <ChannelContainer
+            isCreating={isCreating}
+            setIsCreating={setIsCreating}
+            isEditing={isEditing}
+            setIsEditing={setIsEditing}
+            createType={createType}
+          />
 
 
 
-        </Chat> 
-        
-      </div> */}
-        <h1>la carga fue un exito</h1>
+        </Chat>
 
-        <div onClick={logout}> boton de salida </div>
+      </div>
 
-      </>
-    )
-  }
+
+    </>
+  )
 }
+
 export default ViewMain;

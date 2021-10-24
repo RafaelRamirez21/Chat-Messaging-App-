@@ -18,7 +18,7 @@ const Login = () => {
   const [formLogin, setFormLogin] = useState(initialState)
 
   const handleChange = (e) => {
-    setFormLogin({...formLogin, [e.target.name]: e.target.value})
+    setFormLogin({ ...formLogin, [e.target.name]: e.target.value })
 
     //console.log(formLogin);
   }
@@ -59,27 +59,27 @@ const Login = () => {
         <UserOutlined className='profile' />
       </div>
       <form className="form" onSubmit={handleSubmit}>
-        <input 
+        <input
           placeholder="Username"
-          type="text" 
-          name='username' 
-          onChange={handleChange} 
-          required/>
-        <input 
-          type="password" 
+          type="text"
+          name='username'
+          onChange={handleChange}
+          required />
+        <input
+          type="password"
           placeholder="Password"
-          name='password' 
-          onChange={handleChange} 
-          required/>
-          <div className="buttonsContainer">
-            <button className='button'>Login</button>
+          name='password'
+          onChange={handleChange}
+          required />
+        <div className="buttonsContainer">
+          <button className='button'>Login</button>
 
-            <Link className='link' to="/signup">
-              <div className="signUp">Sign Up</div>
-            </Link>
-          </div>
+          <Link className='link' to="/signup">
+            <div className="signUp">Sign Up</div>
+          </Link>
+        </div>
       </form>
-      
+
       <div className="containerBottom">
         <div className="bottom"></div>
       </div>
