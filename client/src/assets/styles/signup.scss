@@ -294,6 +294,7 @@
     top: 286px;
     display: flex;
     flex-direction: column;
+    z-index: 999;
 
     input{
       height: 50px;

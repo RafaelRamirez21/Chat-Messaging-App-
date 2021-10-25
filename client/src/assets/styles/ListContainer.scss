@@ -7,6 +7,32 @@
   /* height: 800px; */
   height: 100%;
   box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 960px) {
+  
+      display: none;
+    }
+  &-responsive {
+    display: none;
+    height: 100%;
+    box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 90%;
+    top: 0%;
+    z-index: 5;
+    transition: 0.8s ease;
+  }
+  &-toggle {
+    display: none;
+    height: 50px;
+    width: 50px;
+    background: #005fff;
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
 }
 &__sidebar {
   width: 72px;

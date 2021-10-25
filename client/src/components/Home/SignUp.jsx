@@ -33,11 +33,11 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, lastName, email, post, username, password } = form;
+    const { name, lastName, email, phonenumber, post, username, password } = form;
 
     const URL = 'http://localhost:5000/auth'
 
-    const { data: { token, userId, hashedPassword} } = await axios.post(`${URL}/signup`, { name, lastName, email, post, username, password});
+    const { data: { token, userId, hashedPassword} } = await axios.post(`${URL}/signup`, { name, lastName, email, phonenumber, post, username, password});
 
     cookies.set('token', token);
     cookies.set('username', username);
@@ -45,6 +45,7 @@ const SignUp = () => {
     cookies.set('userId', userId);
     cookies.set('lastName', lastName);
     cookies.set('email', email);
+    cookies.set('phonenumber', phonenumber);
     cookies.set('post', post);
     cookies.set('hashedPassword', hashedPassword);
 
@@ -90,9 +91,15 @@ const SignUp = () => {
               name='email' 
               onChange={handleChange} 
               required/>
+              <input 
+              type="text" 
+              placeholder="PhoneNumber"
+              name='phonenumber' 
+              onChange={handleChange} 
+              required/>
             <input 
               type="text" 
-              placeholder="Post"
+              placeholder="Role"
               name='post' 
               onChange={handleChange} 
               required/>
@@ -148,6 +155,12 @@ const SignUp = () => {
             type="email" 
             placeholder="Email"
             name='email' 
+            onChange={handleChange} 
+            required/>
+          <input 
+            type="text" 
+            placeholder="PhoneNumber"
+            name='phonenumber' 
             onChange={handleChange} 
             required/>
           <input 

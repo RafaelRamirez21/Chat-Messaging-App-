@@ -30,6 +30,7 @@ if (authToken) {
     fullname: cookies.get('name'),
     lastName: cookies.get('lastName'),
     email: cookies.get('email'),
+    phonenumber: cookies.get('phonenumber'),
     hashedPassword: cookies.get('hashedPassword'),
     hashedRepeatPassword: cookies.get('hashedRepeatPassword'),
 
