@@ -35,7 +35,7 @@ const SignUp = () => {
 
     const { name, lastName, email, phonenumber, post, username, password } = form;
 
-    const URL = 'http://localhost:5000/auth'
+    const URL = 'https://intopcolapp.herokuapp.com/auth'
 
     const { data: { token, userId, hashedPassword} } = await axios.post(`${URL}/signup`, { name, lastName, email, phonenumber, post, username, password});
 
