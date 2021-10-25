@@ -1,0 +1,80 @@
+.user-list{
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+&__header {
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+  justify-content: space-between;
+  & p{
+    font-size: 14px;
+    line-height: 17px;
+    color: #858688;
+    margin-top: 16px;
+    &:first-child {
+      flex: 2;
+    }
+    &:nth-child(2) {
+      flex: 0.5;
+      text-align: right;
+      margin: 0px 20px;
+    }
+  }
+}
+&__message {
+  font-family: Helvetica Neue, sans-serif;
+  font-size: 16px;
+  color: #2c2c30;
+  margin: 20px;
+}
+}
+.user-item{
+&__wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0px 20px;
+  justify-content: space-between;
+  &:hover {
+    background: #f7f6f8;
+    cursor: pointer;
+  }
+  & p {
+    
+    font-size: 14px;
+    line-height: 17px;
+    color: #2c2c30;
+    word-break: break-all;
+  }
+}
+&__name-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  text-align: left;
+}
+&__last-active {
+  font-weight: 400;
+  width: 30%;
+  flex: 0.5;
+  text-align: right;
+
+  margin: 0px 20px;
+}
+&__invite-empty {
+  height: 18px;
+  width: 18px;
+  background: #f7f6f8;
+  border: 1px solid #dedddf;
+  border-radius: 14px;
+  box-sizing: border-box;
+  margin-left: 2px;
+ 
+}
+&__name {
+  font-weight: 500;
+}
+}

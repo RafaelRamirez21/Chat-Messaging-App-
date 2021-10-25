@@ -3,6 +3,48 @@
 $base-color: #fff;
 $color: rgba(black, 0.88);
 
+@mixin laptopL {
+  @media (max-width: 1440px) {
+    @content
+  }
+};
+
+@mixin laptopM{
+  @media (max-width: 1280px) {
+    @content
+  }
+};
+
+@mixin laptop{
+  @media (max-width: 1024px) {
+    @content
+  }
+};
+
+@mixin tablet{
+  @media (max-width: 768px) {
+    @content
+  }
+};
+
+@mixin mobileL {
+  @media (max-width: 425px) {
+    @content
+  }
+};
+
+@mixin mobileM {
+  @media (max-width: 375px) {
+    @content
+  }
+};
+
+@mixin mobileS {
+  @media (max-width: 320px) {
+    @content
+  }
+}
+
 body {
   background-color: $base-color;
   color: $color;
