@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
 import { AddChannel } from '../../assets/AddChannel';
 import '../../assets/styles/ChannelList.scss';
-const TeamChannelList = ({ children, error = false, loading, type, isCreating, isEditing, setIsEditing, setCreateType, setIsCreating }) => {
+const TeamChannelList = ({ children, error = false, loading, type, isCreating, isEditing, setIsEditing, setCreateType, setIsCreating, setToggleContainer }) => {
   if (error) {
     return type === 'team' ? (
       <div className="team-channel-list">
@@ -35,6 +35,7 @@ const TeamChannelList = ({ children, error = false, loading, type, isCreating, i
           setCreateType={setCreateType}
           setIsCreating={setIsCreating}
           type={type === 'team' ? 'team' : 'messaging'}
+          setToggleContainer={setToggleContainer}
         />
       </div>
       {children}

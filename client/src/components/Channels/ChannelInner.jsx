@@ -68,7 +68,8 @@ const TeamChannelHeader = ({ setIsEditing }) => {
 
     return (
       <div className='team-channel-header__channel-wrapper'>
-        <p className='team-channel-header__name'># {channel.data.name}</p>
+        <Avatar image={channel.data.image} name={channel.data.name} size={32} />
+        <p className='team-channel-header__name'> {channel.data.name}</p>
         <span style={{ display: 'flex' }} onClick={() => setIsEditing(true)}>
           <AiOutlineInfoCircle />
         </span>

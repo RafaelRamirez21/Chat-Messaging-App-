@@ -8,22 +8,22 @@
     height: auto;
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
+    background:#629597;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     font-weight: bold;
     margin-right: 16px;
     cursor: pointer;
     z-index: 2;
+    color: white !important;
     
   }
 
   &__item {
     display: flex;
     align-items: center;
-    font-family: Helvetica Neue, sans-serif;
     font-size: 14px;
-    color: #ffffff;
+
     padding: 0px 20px;
     height: 100%;
     width: 100%;
@@ -34,7 +34,8 @@
 
 
 .channel-preview__wrapper:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: #629597;
+  color: white;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   font-weight: bold;
