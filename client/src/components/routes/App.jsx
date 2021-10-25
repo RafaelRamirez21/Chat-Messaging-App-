@@ -16,7 +16,7 @@ import ViewMain from '../ViewChats/ViewMain';
 
 const cookies = new Cookies();
 
-const apiKey = 'mw4x9ttkdtcf';
+const apiKey = 'qhk2getw4t93';
 
 const authToken = cookies.get("token");
 

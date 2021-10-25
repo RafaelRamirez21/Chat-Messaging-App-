@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StreamChat } from 'stream-chat';
+// import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
-import Cookies from 'universal-cookie';
-import { ChannelListContainer, ChannelContainer, Auth } from '../../components';
-import '../../assets/styles/ViewTeams.scss'
+// import Cookies from 'universal-cookie';
+import { ChannelListContainer, ChannelContainer } from '../../components';
+import '../../assets/styles/ViewTeams.scss';
 
 import { client } from '../routes/App';
 

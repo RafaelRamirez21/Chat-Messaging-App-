@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useChatContext } from 'stream-chat-react';
 import { CloseCreateChannel } from '../../assets/CloseCreateChannel';
-import { UserList } from '../UserList/UserList';
+import UserList from '../UserList/UserList';
+import '../../assets/styles/createChannel.scss';
+
 const ChannelNameImput = ({ channelName = '', setChannelName }) => {
   const handleChange = (event) => {
     event.preventDefault();
@@ -23,10 +25,14 @@ const CreateChannel = ({ createType, setIsCreating }) => {
     <div className="create-channel__container">
       <div className="create-channel__header">
         <p>{createType === 'team' ? 'create a New group\' work' : 'Send a Direct Message'}</p>
-        <CloseCreateChannel setIsCreating={setIsCreating} />
+        <div className="create-channel__close">
+        <CloseCreateChannel  setIsCreating={setIsCreating} />
+        </div>
       </div>
+      <hr />
       {createType === 'team' && <ChannelNameImput channelName={channelName} setChannelName={setChannelName} />}
-      <ChannelNameImput />
+      {/* <ChannelNameImput /> */}
+      <UserList/>
     </div>
   )
 }
