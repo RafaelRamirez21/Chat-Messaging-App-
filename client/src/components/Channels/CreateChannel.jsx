@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useChatContext } from 'stream-chat-react';
 import { UserList } from '../index';
+import { AiOutlineWechat, AiOutlineTeam } from 'react-icons/ai'
 import { CloseCreateChannel } from '../../assets/CloseCreateChannel';
 import '../../assets/styles/CreateChannel.scss';
 const ChannelNameInput = ({ channelName = '', setChannelName }) => {
@@ -46,13 +47,13 @@ const CreateChannel = ({ createType, setIsCreating }) => {
   return (
     <div className="create-channel__container">
       <div className="create-channel__header">
-        <p>{createType === 'team' ? 'Create a New Team' : 'Send a Direct Message'}</p>
+        <p className="text__change"> {createType === 'team' ? 'Create a New Team' : 'Send a Direct Message'}</p>
         <CloseCreateChannel setIsCreating={setIsCreating} />
       </div>
       {createType === 'team' && <ChannelNameInput channelName={channelName} setChannelName={setChannelName} />}
       <UserList setSelectedUsers={setSelectedUsers} />
       <div className="create-channel__button-wrapper" onClick={createChannel}>
-        <p>{createType === 'team' ? 'Create Teamwork' : 'Start chat'}</p>
+        <p className="text__change">{createType === 'team' ? <AiOutlineTeam size={'26px'} /> : <AiOutlineWechat size={'26px'} />}</p>
       </div>
     </div>
   )

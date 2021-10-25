@@ -3,13 +3,16 @@
   &__container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 70%;
+    overflow-y: auto;
   }
 &__header {
   display: flex;
   align-items: center;
   margin: 0px 20px;
   justify-content: space-between;
+  font-family: Helvetica Neue, sans-serif;
+
   & p{
     font-size: 14px;
     line-height: 17px;
@@ -43,7 +46,7 @@
     cursor: pointer;
   }
   & p {
-    
+    font-family: Helvetica Neue, sans-serif;
     font-size: 14px;
     line-height: 17px;
     color: #2c2c30;

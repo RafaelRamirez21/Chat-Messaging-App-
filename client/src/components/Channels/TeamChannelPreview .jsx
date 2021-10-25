@@ -11,11 +11,7 @@ const TeamChannelPreview = ({ channel, type, setToggleContainer, setIsEditing, s
   );
   const DirectPreview = () => {
     const members = Object.values(channel.state.members).filter(({ user }) => user.id !== client.userID)
-<<<<<<< HEAD
-
-=======
     //console.log(members);
->>>>>>> 23c7dd720ac0a66d6d9d86cef7f917e2c97eb56f
     return (
       <div className="channel-preview__item single">
         <Avatar
@@ -24,7 +20,7 @@ const TeamChannelPreview = ({ channel, type, setToggleContainer, setIsEditing, s
           size={24}
 
         />
-        <span>{members[0]?.user?.fullname === undefined ? members[0]?.user?.id : members[0]?.user?.fullname+ ' ' + members[0]?.user?.lastName}</span>
+        <span>{members[0]?.user?.fullname === undefined ? members[0]?.user?.id : members[0]?.user?.fullname + ' ' + members[0]?.user?.lastName}</span>
 
       </div>
     )

@@ -70,13 +70,22 @@
 
 &__header {
   padding-left: 16px;
-  height: 62px;
+  height: 0px;
+  padding-top: 18px;
+  margin-bottom: 44px;
+  display: flex;
+
+
   &__text{
+    display: block;
+    margin: 0;
+    font-family:  Helvetica Neue, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 28px;
     color: #000000;
+    
   }
 }
 &__list__wrapper {

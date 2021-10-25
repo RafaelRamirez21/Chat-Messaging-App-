@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, ChannelList, useChatContext, useComponentContext } from 'stream-chat-react';
+import { Avatar, ChannelList, useChatContext, useChannelStateContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import { HomeOutlined } from '@ant-design/icons'
 import { CgMenuGridO } from 'react-icons/cg'
@@ -49,14 +49,18 @@ const SideBar = () => (
 
 );
 
-const CompanyHeader = () => {
+const CompanyHeader = ({ client }) => {
+
 
   return (
 
     <div className="channel-list__header">
       {/* <Avatar /> */}
-      <Avatar name={"prueba"} />
-      <p className="channel-list__header__text">Profile</p>
+
+      <span className="channel-list__header__text">
+        <Avatar name={client?.user?.name} />
+      </span>
+      <p className="channel-list__header__text">{client?.user?.name}</p>
     </div>
   )
 }
@@ -69,6 +73,8 @@ const customChannelMessagingFilter = (channels) => {
 
 const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType, setIsCreating, setToggleContainer }) => {
   const { client } = useChatContext();
+  const { channel, watcher_count } = useChannelStateContext();
+  console.log(client?.user?.name)
 
 
 
@@ -80,7 +86,7 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
       <SideBar />
       <div className="channel-list__list__wrapper">
 
-        <CompanyHeader />
+        <CompanyHeader client={client} />
         <ChannelSearch setToggleContainer={setToggleContainer} />
         <ChannelList
           filters={filters}
