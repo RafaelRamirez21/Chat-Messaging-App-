@@ -40,7 +40,7 @@ const login = async (req, res) => {
 
 const signup = async (req, res) => {
   try {
-    const {name, lastName, email, post, username, password } = req.body;
+    const {name, lastName, email, phonenumber, post, username, password } = req.body;
 
     const userId = crypto.randomBytes(16).toString('hex');
 
@@ -50,7 +50,7 @@ const signup = async (req, res) => {
 
     const token = serverClient.createUserToken(userId);
 
-    res.status(200).json({ token, name, lastName, email, post, username, userId, hashedPassword });
+    res.status(200).json({ token, name, lastName, email, phonenumber, post, username, userId, hashedPassword });
   } catch (error) {
     console.log(error);
 

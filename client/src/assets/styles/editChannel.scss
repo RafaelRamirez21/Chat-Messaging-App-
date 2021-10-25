@@ -1,0 +1,39 @@
+.edit-channel__container{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+  .edit-channel__header{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0 20px;
+
+    p{
+      font-size:20px;
+      font-weight:bold;
+    }
+  }
+
+  hr{
+    margin:-1px;
+    opacity: 0.4;
+  }
+
+  .edit-channel__button-wrapper{
+    display: flex;
+    align-self: end;
+    padding: 10px 15px;
+    background: #1C797C;
+    border-radius: 15px;
+    color: #fff;
+    margin: 25px;
+    cursor: pointer;
+
+    p{
+      margin: 0;
+      font-size: 17px;
+    }
+  }
+}
+

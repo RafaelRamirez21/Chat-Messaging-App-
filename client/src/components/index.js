@@ -8,3 +8,4 @@ export { default as CreateChannel } from './Channels/CreateChannel';
 export { default as EditChannel } from './Channels/EditChannel';
 export { default as TeamMessage } from './Channels/TeamMessage';
 export { default as UserList } from './UserList/UserList';
+export { default as ResultsDropdown } from './Channels/ResultsDropdown ';

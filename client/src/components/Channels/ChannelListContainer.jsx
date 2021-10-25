@@ -31,16 +31,6 @@ const menu = [
     "tag": <AiFillHome className="channel-list__sidebar__icon__setting" />,
   },
   {
-    "id": 2,
-    "tag": <FaUser className="channel-list__sidebar__icon__setting" />,
-  },
-
-  {
-    "id": 3,
-    "tag": <AiFillSetting className="channel-list__sidebar__icon__setting" />,
-  },
-
-  {
     "id": 4,
     "tag": <AiOutlineLogout onClick={() => logout()} className="channel-list__sidebar__icon__setting" />,
   },
@@ -91,7 +81,7 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
       <div className="channel-list__list__wrapper">
 
         <CompanyHeader />
-        <ChannelSearch />
+        <ChannelSearch setToggleContainer={setToggleContainer} />
         <ChannelList
           filters={filters}
           channelRenderFilterFn={customChannelTeamFilter}
