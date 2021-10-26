@@ -12,6 +12,13 @@
   z-index: 10;
   left: 230px;
   top: 16px;
+
+  @media (max-width: 960px) {
+    width: 234px;
+    z-index: 1002;
+    left: 0;
+    top: 62px;
+  }
 }
 .channel-search__results-header {
   width: fit-content;
