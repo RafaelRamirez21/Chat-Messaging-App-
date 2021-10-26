@@ -1,9 +1,9 @@
 # Chat-Messaging-App
-This application used to buy women clothes with whatsApp API.
-deploy: https://priceless-newton-029089.netlify.app/
+This application was designed to INTOPCOL to make more comfortable the communication through an internal chat between the different area in the company with their employee.
+deploy: https://chat-messaging-app.netlify.app/
 
 ## Project Status
-At the moment don't have backend work. This is first version of this website and it's going to be updated.
+At the moment is finished and is going to pass for several testings in order to warranty an excellent product.
 
 ## Installation
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
@@ -20,11 +20,11 @@ npm start
 To Visit App
 (for default): This path could be modified with the use of webapck.
 ```bash 
-localhost:3004
+localhost:3007
 ``` 
 ## Reflection
-This was a 2 week long project built during my process to become a fullstack developer. Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.
-I started this process by using my webpack configuration where adding `react-router-` and `redux`and `react-icon`.  
+This was a great collaborative project that was made with love. Throughtout this project we improved our skills in the both side, backend and frontend and strengthen the teamwork skill.
+I started this process by using my webpack configuration where adding `react-router-` and `stream-chat-react`and `react-icon`.  
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
