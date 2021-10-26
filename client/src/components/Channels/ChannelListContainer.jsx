@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa'
 import { AiFillSetting, AiOutlineUser, AiOutlineLogout, AiFillHome } from 'react-icons/ai'
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from '../index';
 import '../../assets/styles/ListContainer.scss';
+import { CloseCreateChannel } from '../../assets/CloseCreateChannel'
 const cookies = new Cookies();
 
 
@@ -50,6 +51,9 @@ const SideBar = () => (
 const CompanyHeader = () => (
   <div className="channel-list__header">
     <p className="channel-list__header__text">Profile</p>
+    <div className='channel-list__header__closeIcon'>
+      <CloseCreateChannel />
+    </div>
   </div>
 )
 const customChannelTeamFilter = (channels) => {
@@ -62,13 +66,24 @@ const customChannelMessagingFilter = (channels) => {
 const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType, setIsCreating, setToggleContainer }) => {
   const { client } = useChatContext();
   const filters = { members: { $in: [client.userID] } }
+
+// const CustomListContainer = (props) => {
+//     <div className="prueba">
+//       <div className="team-channel-list">
+
+//       </div>
+//     </div>
+// };
+
   return (
     <>
       <SideBar />
       <div className="channel-list__list__wrapper">
         <CompanyHeader />
         <ChannelSearch setToggleContainer={setToggleContainer} />
+        <div className="channel-list-wrapper">
         <ChannelList
+          className="str-chat str-chat-channel-list team light"
           filters={filters}
           channelRenderFilterFn={customChannelTeamFilter}
           List={(listProps) => (
@@ -80,10 +95,9 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
               setCreateType={setCreateType}
               setIsCreating={setIsCreating}
               setToggleContainer={setToggleContainer}
-
-
             />
           )}
+          
           Preview={(previewProps) => (
             <TeamChannelPreview
               {...previewProps}
@@ -95,7 +109,10 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
             />
           )}
         />
+        
+
         <ChannelList
+          className="str-chat str-chat-channel-list team light"
           filters={filters}
           channelRenderFilterFn={customChannelMessagingFilter}
           List={(listProps) => (
@@ -120,6 +137,7 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
             />
           )}
         />
+        </div>
       </div>
 
     </>

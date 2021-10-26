@@ -6,5 +6,9 @@
     height: 100vh;
     /* border-radius: 16px; */
     box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px 0px;
+
+    @media (max-width: 960px) {
+      display: block;
+    }
   }
   
