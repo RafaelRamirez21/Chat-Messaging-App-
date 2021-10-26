@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChannelList, useChatContext } from 'stream-chat-react';
+import { Avatar, ChannelList, useChatContext, useChannelStateContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import { HomeOutlined } from '@ant-design/icons'
 import { CgMenuGridO } from 'react-icons/cg'
@@ -8,6 +8,7 @@ import { AiFillSetting, AiOutlineUser, AiOutlineLogout, AiFillHome } from 'react
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from '../index';
 import '../../assets/styles/ListContainer.scss';
 import { CloseCreateChannel } from '../../assets/CloseCreateChannel'
+import {IoIosArrowForward} from 'react-icons/io'
 const cookies = new Cookies();
 
 
@@ -48,14 +49,24 @@ const SideBar = () => (
   </div>
 
 );
-const CompanyHeader = () => (
-  <div className="channel-list__header">
-    <p className="channel-list__header__text">Profile</p>
-    <div className='channel-list__header__closeIcon'>
-      <CloseCreateChannel />
+
+
+const CompanyHeader = ({ client, toggleActive }) => {
+  return (
+
+    <div className="channel-list__header">
+      <div className="channel-list__header__wrapper">
+        <span className="channel-list__header__text">
+          <Avatar name={client?.user?.name} />
+        </span>
+        <p className="channel-list__header__text">{client?.user?.name}</p>
+      </div>
+      <div className='channel-list__header__closeIcon' onClick={toggleActive}>
+        <CloseCreateChannel />
+      </div>
     </div>
-  </div>
-)
+  )
+}
 const customChannelTeamFilter = (channels) => {
   return channels.filter((channel) => channel.type === 'team')
 }
@@ -63,23 +74,22 @@ const customChannelMessagingFilter = (channels) => {
   return channels.filter((channel) => channel.type === 'messaging')
 }
 
-const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType, setIsCreating, setToggleContainer }) => {
+const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType, setIsCreating, setToggleContainer, toggleActive }) => {
   const { client } = useChatContext();
+  const { channel, watcher_count } = useChannelStateContext();
+  console.log(client?.user?.name)
+
+
+
+  // console.log(channel)
   const filters = { members: { $in: [client.userID] } }
-
-// const CustomListContainer = (props) => {
-//     <div className="prueba">
-//       <div className="team-channel-list">
-
-//       </div>
-//     </div>
-// };
 
   return (
     <>
       <SideBar />
       <div className="channel-list__list__wrapper">
-        <CompanyHeader />
+
+        <CompanyHeader client={client} toggleActive={toggleActive} />
         <ChannelSearch setToggleContainer={setToggleContainer} />
         <div className="channel-list-wrapper">
         <ChannelList
@@ -87,6 +97,7 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
           filters={filters}
           channelRenderFilterFn={customChannelTeamFilter}
           List={(listProps) => (
+
             <TeamChannelList  {...listProps}
               type="team"
               isCreating={isCreating}
@@ -144,30 +155,25 @@ const ChannelListContent = ({ isCreating, isEditing, setIsEditing, setCreateType
   )
 }
 const ChannelListContainer = ({ isCreating, isEditing, setIsEditing, setCreateType, setIsCreating }) => {
-  const [toggleContainer, setToggleContainer] = useState(false)
+  const [activeMenu, setActiveMenu] = useState(false)
+
+  const toggleActive = () =>{
+    setActiveMenu(!activeMenu)
+  }
 
   return (
     <>
-      <div className="channel-list__container">
-        <ChannelListContent
-          isCreating={isCreating}
-          isEditing={isEditing}
-          setIsEditing={setIsEditing}
-          setCreateType={setCreateType}
-          setIsCreating={setIsCreating} />
-      </div>
-      <div className="channel-list__container-responsive"
-        style={{ left: toggleContainer ? '0%' : '.89%', backgroundColor: 'white' }}
-      >
-        <div className="channel-list__container-toogle" onClick={() => setToggleContainer(!toggleContainer)}></div>
+      <div className={activeMenu ? "channel-list__container-active" : "channel-list__container"}>
         <ChannelListContent
           isCreating={isCreating}
           isEditing={isEditing}
           setIsEditing={setIsEditing}
           setCreateType={setCreateType}
           setIsCreating={setIsCreating}
-          setToggleContainer={setToggleContainer}
-        />
+          toggleActive={toggleActive} />
+      </div>
+      <div className="channel-list__buttonClose" onClick={toggleActive}>
+        <IoIosArrowForward className='channel-list__arrowRight'/>
       </div>
     </>
   )

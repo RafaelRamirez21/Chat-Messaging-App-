@@ -37,6 +37,7 @@
   white-space: nowrap;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: Helvetica Neue, sans-serif;
 }
 
 @media screen and (min-width: 1070px) {
@@ -53,6 +54,8 @@
   display: flex;
   align-items: center;
   margin-right: 8px;
+  font-family: Helvetica Neue, sans-serif;
+  font-weight: 700;
 }
 
 .team-channel-header__name-multi:nth-child(3) {
@@ -66,6 +69,9 @@
 .team-channel-header__name.user {
   font-weight: 500;
   font-size: 14px;
+  font-family: Helvetica Neue, sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
 .team-channel-header__right {

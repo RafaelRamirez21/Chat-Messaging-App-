@@ -14,7 +14,7 @@ const ViewMain = () => {
   return (
     <>
       <div className='main-view-chat'>
-        <Chat client={client} theme='team light'>
+        <Chat client={client} theme='team light}'>
           <ChannelListContainer
             isCreating={isCreating}
             setIsCreating={setIsCreating}

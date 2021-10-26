@@ -7,7 +7,7 @@ const TeamChannelPreview = ({ channel, type, setToggleContainer, setIsEditing, s
   const { channel: activeChannel, client } = useChatContext();
   
   const ChannelPreview = () => (
-    <span className="channel-preview__item">
+    <span className="channel-preview__item group">
       <Avatar image={channel.data.image} name={channel.data.name} size={32} />
       {channel?.data?.name || channel?.data?.id}
     </span>
@@ -24,7 +24,7 @@ const TeamChannelPreview = ({ channel, type, setToggleContainer, setIsEditing, s
           size={24}
 
         />
-        <span>{members[0]?.user?.fullname === undefined ? members[0]?.user?.id : members[0]?.user?.fullname+ ' ' + members[0]?.user?.lastName}</span>
+        <span>{members[0]?.user?.fullname === undefined ? members[0]?.user?.id : members[0]?.user?.fullname + ' ' + members[0]?.user?.lastName}</span>
 
       </div>
     )

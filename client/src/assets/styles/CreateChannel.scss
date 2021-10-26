@@ -42,13 +42,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 118px;
+    height: 62px;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
     padding-right: 20px;
+    font-weight: 700;
+    
   }
   &__button-wrapper {
     height: 82px;
-    background: #1C797C;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -60,10 +62,17 @@
       font-size: 18px;
       padding: 10px 20px;
       color: #ffffff;
-      border-radius: 8px;
+      border-radius: 100%;
       cursor: pointer;
     }
   }
 
 
+}
+.text__change{
+  font-family: Helvetica Neue, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #2c2c30;
+  margin-right: 8px;
 }

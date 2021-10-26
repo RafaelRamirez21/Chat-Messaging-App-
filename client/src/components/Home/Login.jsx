@@ -30,7 +30,7 @@ const Login = () => {
 
     const { username, password } = formLogin;
 
-    const URL = 'http://localhost:5000/auth'
+    const URL = 'https://intopcolapp.herokuapp.com/auth'
 
     const { data: { token, userId } } = await axios.post(`${URL}/login`, { username, password });
 

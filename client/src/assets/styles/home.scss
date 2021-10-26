@@ -9,24 +9,24 @@
   .left{
     display: flex;
     flex: 8;
-    height:728px;
+    height:100vh;
     
 
     @include laptopL {
-      height: 900px;
+      height: 100vh;
     };
 
     @include laptopM {
-      height: 950px;
+      height: 100vh;
     };
 
     @include laptop{
-      height: 800px;
+      height: 100vh;
     };
     
     .banner{
       position: relative;
-      height: 100%;
+      height: 100vh;
       width: 100%;
       overflow: hidden;
       display: flex;
