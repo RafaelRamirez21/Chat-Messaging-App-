@@ -29,3 +29,15 @@
   margin: 0;
   color: #858688;
 }
+
+.str-chat__input-flat .str-chat__textarea>textarea:focus{
+  outline: 3px solid #1C797C !important;
+  border-color: #1C797C !important;
+}
+
+.str-chat__send-button{
+  path{
+    fill:#1C797C !important;
+  }
+}
+

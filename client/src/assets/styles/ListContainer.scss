@@ -11,6 +11,7 @@
     position: absolute;
     z-index: 999;
     left: -315px;
+    height: 100vh;
    }
   }
   &__container-active{
@@ -22,6 +23,7 @@
       position: absolute;
       z-index: 999;
       left: 0;
+      height: 100vh;
      }
   }
 
